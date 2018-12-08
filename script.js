@@ -1,6 +1,8 @@
 var TEXT_ROBOT = "Je ne suis pas un robot";
 var TEXT_POWERED = "Fournit par les Archives Nationales";
 var TEXT_TOOLTIP_TITLE = 'Trouvez les occurences du mot : <span class="word_to_find">SOLDAT</span>';
+var TEXT_VALIDER = 'VALIDER';
+var TEXT_NEW = "Recharger";
 
 $( document ).ready(function() {
     $captcha = $("#captcha");
@@ -23,6 +25,10 @@ function createVerificationTooltip($tooltip){
     for (let index = 0; index < 9; index++) {
         $pBox.append('<div class="tooltip_picture_box_'+index+'"><img src="" /></div>')
     }
+    $tooltip.append('<div class="tooltip_buttons"></div>');
+    $tooltip.children().last().append('<div></div>');
+    $tooltip.children().last().append('<div class="tooltip_button_OK_box"><div class="btnOK">'+TEXT_VALIDER+'</div></div>');
+    $tooltip.children().last().append('<div class="tooltip_link_new_box"><div class="linkNew">'+TEXT_NEW+'</div></div>');
 }
 
 function addListeners(){

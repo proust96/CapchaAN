@@ -23,7 +23,7 @@ html, body{
     text-align: center;
 }
 .tooltip_pictures_box {
-    flex: 0 0 90%;
+    flex: 0 0 79%;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -41,6 +41,46 @@ html, body{
 }
 .tooltip_pictures_box>div.selected {
     border: 2px solid #232395;
+}
+.tooltip_buttons {
+    padding-top: 5px;
+    flex: 0 0 10%;
+    display: flex;
+    flex-direction: row;
+}
+.tooltip_buttons>div {
+    flex: 0 0 33%;
+}
+.tooltip_link_new_box {
+    align-self: center;
+    text-align: right;
+    font-size: 0.9em;
+    color: #434343;
+    text-decoration: underline;
+}
+.linkNew{
+    cursor: pointer;
+    display: inline;
+}
+.tooltip_button_OK_box {
+    align-self: center;
+    text-align: center;
+}
+.btnOK {
+    background-color: #232395;
+    width: 85px;
+    text-align: center;
+    border-radius: 3px;
+    color: white;
+    font-weight: 600;
+    font-size: 0.95em;
+    cursor: pointer;
+    border: 2px solid transparent;
+    margin: auto;
+    transition: 0.25s all ease;
+}
+.btnOK:hover {
+    background-color: #232395c9;
 }
 span.word_to_find {
     color: #232395;
