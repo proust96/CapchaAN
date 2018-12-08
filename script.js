@@ -1,6 +1,6 @@
 var TEXT_ROBOT = "Je ne suis pas un robot";
 var TEXT_POWERED = "Fournit par les Archives Nationales";
-var TEXT_TOOLTIP_TITLE = 'Trouvez les occurences du mot : <span class="word_to_find">SOLDAT</span>';
+var TEXT_TOOLTIP_TITLE = 'Trouvez les occurences du mot : <span class="word_to_find">CAPITAINE</span>';
 var TEXT_VALIDER = 'VALIDER';
 var TEXT_NEW = "Recharger";
 
@@ -12,7 +12,7 @@ $( document ).ready(function() {
     $captcha.append('<div class="text_powered">'+TEXT_POWERED+'</div>');
 
     // VERIFICATION TOOLTIP
-    $captcha.append('<div class="verification_tooltip"></div>');
+    $captcha.append('<div class="verification_tooltip" style="display: none;"></div>');
     createVerificationTooltip($captcha.children().last());
 
     addListeners();
@@ -23,7 +23,7 @@ function createVerificationTooltip($tooltip){
     $tooltip.append('<div class="tooltip_pictures_box"></div>');
     $pBox = $tooltip.children().last();
     for (let index = 0; index < 9; index++) {
-        $pBox.append('<div class="tooltip_picture_box_'+index+'"><img src="" /></div>')
+        $pBox.append('<div class="tooltip_picture_box_'+index+'"><img src="img/'+(index%5+1)+'.png" /></div>')
     }
     $tooltip.append('<div class="tooltip_buttons"></div>');
     $tooltip.children().last().append('<div></div>');
@@ -32,7 +32,23 @@ function createVerificationTooltip($tooltip){
 }
 
 function addListeners(){
+    $(".checkbox_box").on("click", function(){
+        if (!$(this).hasClass("validated")){
+            $(this).addClass("validated");
+            $(".verification_tooltip").fadeIn(200);
+        }
+        else{
+            $(this).removeClass("validated");
+            $(".verification_tooltip").fadeOut(200);
+        }
+    });
     $(".tooltip_pictures_box>div").on("click", function(){
         $(this).toggleClass("selected");
-    })
+    });
+    $(".tooltip_buttons .btnOK").on("click", function(){
+        alert("ok");
+    });
+    $(".tooltip_buttons .linkNew").on("click", function(){
+        alert("new");
+    });
 }
