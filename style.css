@@ -1,0 +1,43 @@
+html, body{
+    margin:0;
+    padding:0;
+    margin-top: 220px;
+    margin-left: 100px;
+}
+div#captcha {
+    width: 300px;
+    max-width: 300px;
+    height: 50px;
+    max-height: 50px;
+    position: relative;
+    background-color: #e1e1e1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    font-family: 'Nunito', sans-serif;
+    border: 2px solid #d8d8d8;
+    border-radius: 3px;
+}
+div#captcha .text_powered {
+    flex: 0 0 20%;
+    align-self: center;
+    text-align: center;
+    font-size: 0.5em;
+}
+
+div#captcha .text_robot {
+    flex: 1 1 60%;
+}
+
+div#captcha .checkbox_div {
+    flex: 1 0 20%;
+}
+div#captcha .checkbox_div .checkbox_box {
+    width: 30px;
+    height: 30px;
+    background-color: #f3f3f3;
+    margin: auto;
+    border: 2px solid #9c9c9c;
+    border-radius: 3px;
+}
