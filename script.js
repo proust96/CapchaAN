@@ -7,7 +7,7 @@ var TEXT_NEW = "Recharger";
 $( document ).ready(function() {
     $captcha = $("#captcha");
     // THE CAPCHA FORM BOX
-    $captcha.append('<div class="checkbox_div"><div class="checkbox_box"></div></div>');
+    $captcha.append('<div class="checkbox_div"><div class="checkbox_box"><i class="fas fa-check" style="display: none;"></i></div></div>');
     $captcha.append('<div class="text_robot">'+TEXT_ROBOT+'</div>');
     $captcha.append('<div class="text_powered">'+TEXT_POWERED+'</div>');
 
@@ -33,12 +33,12 @@ function createVerificationTooltip($tooltip){
 
 function addListeners(){
     $(".checkbox_box").on("click", function(){
-        if (!$(this).hasClass("validated")){
-            $(this).addClass("validated");
+        if (!$(this).hasClass("opened")){
+            $(this).addClass("opened");
             $(".verification_tooltip").fadeIn(200);
         }
         else{
-            $(this).removeClass("validated");
+            $(this).removeClass("opened");
             $(".verification_tooltip").fadeOut(200);
         }
     });
@@ -46,7 +46,10 @@ function addListeners(){
         $(this).toggleClass("selected");
     });
     $(".tooltip_buttons .btnOK").on("click", function(){
-        alert("ok");
+        $(".checkbox_box").removeClass("opened");
+        $(".verification_tooltip").fadeOut(200);
+        $(".checkbox_box").addClass("active");
+        $(".checkbox_box i").fadeIn(400);
     });
     $(".tooltip_buttons .linkNew").on("click", function(){
         alert("new");
