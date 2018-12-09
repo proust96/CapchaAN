@@ -1,5 +1,5 @@
 var TEXT_ROBOT = "Je ne suis pas un robot";
-var TEXT_POWERED = "Fournit par les Archives Nationales";
+var TEXT_POWERED = '<img src="img/logo_small.png">';
 var TEXT_TOOLTIP_TITLE = 'Trouvez les occurences du mot : <span class="word_to_find">CAPITAINE</span>';
 var TEXT_VALIDER = 'VALIDER';
 var TEXT_NEW = '<i class="fas fa-sync"></i>Recharger';

@@ -139,6 +139,9 @@ div#captcha .text_powered {
     text-align: center;
     font-size: 0.5em;
 }
+.text_powered img {
+    width: 65%;
+}
 div#captcha .text_robot {
     flex: 1 1 60%;
 }
