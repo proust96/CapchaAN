@@ -84,7 +84,7 @@ body{
     text-align: center;
 }
 .btnOK {
-    background-color: #232395;
+    background-color: #255ea7;
     width: 85px;
     text-align: center;
     border-radius: 3px;
@@ -100,7 +100,7 @@ body{
     background-color: #232395c9;
 }
 span.word_to_find {
-    color: #232395;
+    color: #255ea7;
     font-weight: 700;
 }
 
@@ -112,7 +112,11 @@ span.word_to_find {
 
 
 /*  THE CAPCHA BOX */
-
+div#captcha_box {
+    position: absolute;
+    top: 360px;
+    left: 616px;
+}
 div#captcha {
     width: 300px;
     max-width: 300px;
@@ -125,13 +129,13 @@ div#captcha {
     align-items: center;
     justify-content: flex-start;
     font-family: 'Nunito', sans-serif;
-    border: 2px solid #d8d8d8;
+    border: 2px solid #9eb7d8;
     border-radius: 3px;
     cursor: default;
     transition: 0.3s all ease;
 }
 div#captcha:hover {
-    border: 2px solid #c2c2c2;
+    border: 2px solid #9eb7d8;
     border-radius: 5px;
     background-color: #ffffff;
 }
@@ -175,7 +179,7 @@ div#captcha .checkbox_div .checkbox_box.active i {
     color: white;
 }
 div#captcha .checkbox_div .checkbox_box.active {
-    background-color: #232395;
+    background-color: #255ea7;
 }
 
 
