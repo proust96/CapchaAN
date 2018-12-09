@@ -2,7 +2,7 @@ var TEXT_ROBOT = "Je ne suis pas un robot";
 var TEXT_POWERED = "Fournit par les Archives Nationales";
 var TEXT_TOOLTIP_TITLE = 'Trouvez les occurences du mot : <span class="word_to_find">CAPITAINE</span>';
 var TEXT_VALIDER = 'VALIDER';
-var TEXT_NEW = "Recharger";
+var TEXT_NEW = '<i class="fas fa-sync"></i>Recharger';
 
 $( document ).ready(function() {
     $captcha = $("#captcha");
@@ -19,11 +19,12 @@ $( document ).ready(function() {
 });
 
 function createVerificationTooltip($tooltip){
+    $tooltip.append('<div class="loader" style="display: none;"></div>');
     $tooltip.append('<div class="tooltip_title">'+TEXT_TOOLTIP_TITLE+'</div>');
     $tooltip.append('<div class="tooltip_pictures_box"></div>');
     $pBox = $tooltip.children().last();
     for (let index = 0; index < 9; index++) {
-        $pBox.append('<div class="tooltip_picture_box_'+index+'"><img src="img/'+(index%5+1)+'.png" /></div>')
+        $pBox.append('<div class="tooltip_picture_box_'+index+'"><img src="img/metier/'+(index+1)+'.png" /></div>')
     }
     $tooltip.append('<div class="tooltip_buttons"></div>');
     $tooltip.children().last().append('<div></div>');
@@ -46,10 +47,16 @@ function addListeners(){
         $(this).toggleClass("selected");
     });
     $(".tooltip_buttons .btnOK").on("click", function(){
-        $(".checkbox_box").removeClass("opened");
-        $(".verification_tooltip").fadeOut(200);
-        $(".checkbox_box").addClass("active");
-        $(".checkbox_box i").fadeIn(400);
+        $(".loader").show();
+        $(".verification_tooltip").addClass("validating");
+        setTimeout(function(){
+            $(".checkbox_box").removeClass("opened");
+            $(".verification_tooltip").fadeOut(200);
+            setTimeout(function(){
+            $(".checkbox_box").addClass("active");
+            $(".checkbox_box i").fadeIn(400);
+            },300);
+        },700);
     });
     $(".tooltip_buttons .linkNew").on("click", function(){
         alert("new");
